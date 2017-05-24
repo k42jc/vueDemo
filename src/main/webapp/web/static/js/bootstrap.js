@@ -965,7 +965,7 @@
             .appendTo(document.body)
 
           this.$backdrop.click(
-            this.options.backdrop == 'static' ?
+            this.options.backdrop == 'web.static' ?
               $.proxy(this.$element[0].focus, this.$element[0])
             : $.proxy(this.hide, this)
           )

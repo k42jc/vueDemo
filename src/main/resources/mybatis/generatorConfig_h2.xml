@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd" >
+<generatorConfiguration>
+    <!-- 数据库驱动包jar文件位置 -->
+    <classPathEntry location="H:\Users\liaoxudong\.m2\repository\com\h2database\h2\1.4.190\h2-1.4.190.jar" />
+    <context id="context">
+        <!-- 是否去除自动生成的注释 -->
+        <commentGenerator>
+            <property name="suppressAllComments" value="true" />
+        </commentGenerator>
+        <!-- 数据库连接信息 -->
+        <jdbcConnection driverClass="org.h2.Driver" connectionURL="jdbc:h2:file:~/.h2/test;AUTO_SERVER=TRUE;DB_CLOSE_DELAY=-1"
+                        userId="sa" password="" />
+        <!-- java与数据库类型转换 -->
+        <javaTypeResolver>
+            <property name="forceBigDecimals" value="false" />
+            <property name="useActualColumnNames" value="true" />
+            <property name="mapUnderscoreToCamelCase" value="true" />
+
+        </javaTypeResolver>
+        <!-- 成成对应文件存放目录 -->
+        <!-- 实体类生成存放目录-->
+        <javaModelGenerator targetPackage="com.techeffic.entity" targetProject="src/main/java" >
+            <property name="enableSubPackages" value="true"/>
+            <property name="trimStrings" value="true"/>
+        </javaModelGenerator>
+        <!-- 生成mapper.xml文件存放位置 -->
+        <sqlMapGenerator targetPackage="mybatis.mapper" targetProject="src/main/resources" />
+        <!-- 生成dao接口存放位置-->
+        <javaClientGenerator targetPackage="com.techeffic.dao" targetProject="src/main/java"
+                             type="XMLMAPPER" />
+        <table schema="" tableName="T_USER" domainObjectName="User" enableCountByExample="false"
+               enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false"
+               selectByExampleQueryId="false">
+            <!-- 忽略列，不生成bean 字段 -->
+            <!--<ignoreColumn column="FRED" />-->
+            <!-- 指定列的java数据类型 -->
+            <!--<columnOverride column="LONG_VARCHAR_FIELD" jdbcType="VARCHAR" />-->
+        </table>
+    </context>
+</generatorConfiguration>

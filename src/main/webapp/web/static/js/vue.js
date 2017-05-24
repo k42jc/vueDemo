@@ -2163,7 +2163,7 @@
    * @param {*} value
    * @param {Vue} [vm]
    * @return {Observer|undefined}
-   * @static
+   * @web.static
    */
 
   function observe(value, vm) {
@@ -2750,7 +2750,7 @@
   var allowedKeywordsRE = new RegExp('^(' + allowedKeywords.replace(/,/g, '\\b|') + '\\b)');
 
   // keywords that don't make sense inside expressions
-  var improperKeywords = 'break,case,class,catch,const,continue,debugger,default,' + 'delete,do,else,export,extends,finally,for,function,if,' + 'import,in,instanceof,let,return,super,switch,throw,try,' + 'var,while,with,yield,enum,await,implements,package,' + 'proctected,static,interface,private,public';
+  var improperKeywords = 'break,case,class,catch,const,continue,debugger,default,' + 'delete,do,else,export,extends,finally,for,function,if,' + 'import,in,instanceof,let,return,super,switch,throw,try,' + 'var,while,with,yield,enum,await,implements,package,' + 'proctected,web.static,interface,private,public';
   var improperKeywordsRE = new RegExp('^(' + improperKeywords.replace(/,/g, '\\b|') + '\\b)');
 
   var wsRE = /\s/g;
@@ -5783,7 +5783,7 @@
     /**
      * Setup. Two possible usages:
      *
-     * - static:
+     * - web.static:
      *   <comp> or <div v-component="comp">
      *
      * - dynamic:
@@ -5819,7 +5819,7 @@
         if (this.descriptor.ref) {
           this.el.removeAttribute('v-ref:' + hyphenate(this.descriptor.ref));
         }
-        // if static, build right now.
+        // if web.static, build right now.
         if (this.literal) {
           this.setComponent(this.expression);
         }
@@ -7810,7 +7810,7 @@
         // dynamic
         this._setupParamWatcher(mappedKey, val);
       } else {
-        // static
+        // web.static
         val = getAttr(this.el, key);
         if (val != null) {
           this.params[mappedKey] = val === '' ? true : val;
