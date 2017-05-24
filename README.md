@@ -12,7 +12,7 @@
 
 down...
 
-###简介
+### 简介
 1. 因为vue.js完全可以作为页面模板使用，所以考虑后把html与后台接口完全隔离，后台通过restful接口提供数据/接受请求，页面使用vue-source通信
 
 2. 项目配置了mybatisGenerate与对应的maven插件，可直接使用 `mvn mybatis-generator:generate -e` 命令生成dao、mapper、entity
