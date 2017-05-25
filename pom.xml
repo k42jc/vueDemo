@@ -23,12 +23,22 @@
             <artifactId>mybatis</artifactId>
             <version>3.3.0</version>
         </dependency>
+        <!--<dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <version>3.1.0</version>
+        </dependency>
+        <dependency>
+            <groupId>jstl</groupId>
+            <artifactId>jstl</artifactId>
+            <version>1.2</version>
+        </dependency>
 
-        <!--<dependency>-->
-            <!--<groupId>com.google.guava</groupId>-->
-            <!--<artifactId>guava</artifactId>-->
-            <!--<version>18.0</version>-->
-        <!--</dependency>-->
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>18.0</version>
+        </dependency>-->
         <dependency>
             <groupId>log4j</groupId>
             <artifactId>log4j</artifactId>
@@ -82,11 +92,11 @@
             <version>2.6.4</version>
         </dependency>
 
-        <!--<dependency>-->
-            <!--<groupId>commons-fileupload</groupId>-->
-            <!--<artifactId>commons-fileupload</artifactId>-->
-            <!--<version>1.3.1</version>-->
-        <!--</dependency>-->
+        <!--<dependency>
+            <groupId>commons-fileupload</groupId>
+            <artifactId>commons-fileupload</artifactId>
+            <version>1.3.1</version>
+        </dependency>-->
 
 
         <dependency>
@@ -96,11 +106,11 @@
         </dependency>
 
 
-        <!--<dependency>-->
-            <!--<groupId>javax.inject</groupId>-->
-            <!--<artifactId>javax.inject</artifactId>-->
-            <!--<version>1</version>-->
-        <!--</dependency>-->
+       <!-- <dependency>
+            <groupId>javax.inject</groupId>
+            <artifactId>javax.inject</artifactId>
+            <version>1</version>
+        </dependency>-->
 
         <dependency>
             <groupId>commons-dbcp</groupId>
@@ -113,6 +123,7 @@
             <artifactId>h2</artifactId>
             <version>1.4.190</version>
         </dependency>
+
     </dependencies>
     <build>
         <finalName>vueDemo</finalName>
@@ -168,10 +179,14 @@
                 <artifactId>jetty-maven-plugin</artifactId>
                 <version>9.4.5.v20170502</version>
                 <configuration>
-                    <webAppSourceDirectory>${project.basedir}/src/main/webapp/web/views</webAppSourceDirectory>
+                    <webAppSourceDirectory>${project.basedir}/src/main/webapp/web</webAppSourceDirectory>
                     <webApp>
                         <contextPath>/</contextPath>
                         <descriptor>${project.basedir}/src/main/webapp/WEB-INF/web.xml</descriptor>
+                        <!-- 使用修改的jetty webdefault.xml配置文件 <param-name>useFileMappedBuffer</param-name>
+      <param-value>false</param-value> 设置为false 避免热修改静态文件总是报错 -->
+                        <defaultsDescriptor>${project.basedir}/src/main/resources/jetty/webdefault.xml</defaultsDescriptor>
+                        <!--<resourceBases>${project.basedir}/src/main/webapp/web,${project.basedir}/src/main/webapp</resourceBases>-->
                     </webApp>
                 </configuration>
             </plugin>

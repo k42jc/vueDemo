@@ -14,7 +14,7 @@
     <!-- 强大的标签，@ReponseBody的json处理问题都解决了 -->
     <mvc:annotation-driven/>
     <!--对静态资源放行-->
-    <!--<mvc:resources mapping="/web/**" location="/web/"/>-->
+    <mvc:resources mapping="/static/**" location="classpath*:web/static/"/>
     <!-- 因为使用vue了，决定不再使用jstl或者其它java模板，直接使用静态html页面 -->
     <!--视图的位置（视图解析器）-->
     <!--<bean id="viewResolver" class="org.springframework.web.servlet.view.UrlBasedViewResolver">

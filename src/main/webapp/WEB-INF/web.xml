@@ -33,7 +33,8 @@
     </init-param>
     <init-param>
       <param-name>forceEncoding</param-name>
-      <param-value>true</param-value>
+      <!-- 将foreEncoding设为false解决Jetty访问js/css等静态文件时报空值异常 -->
+      <param-value>false</param-value>
     </init-param>
   </filter>
   <filter-mapping>
@@ -42,7 +43,7 @@
   </filter-mapping>
 
   <welcome-file-list>
-    <welcome-file>/index.html</welcome-file>
+    <welcome-file>/views/index.html</welcome-file>
   </welcome-file-list>
 
 

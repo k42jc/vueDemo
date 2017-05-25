@@ -10,7 +10,7 @@ import java.io.Serializable;
  */
 @XmlRootElement(name = "user")
 public class User implements Serializable{
-    @XmlElement
+
     private Integer id;
     private String username;
     private String password;
@@ -21,7 +21,7 @@ public class User implements Serializable{
     public Integer getId() {
         return id;
     }
-
+    @XmlElement
     public void setId(Integer id) {
         this.id = id;
     }

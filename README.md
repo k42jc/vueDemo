@@ -19,3 +19,11 @@ down...
 
 3. 为演示方便，使用H2 database，每次启动程序都会重置演示数据。
 项目中配置了对应的Maven插件，使用 `mvn exec:java` 即可在浏览器登录查看当前项目的数据
+
+
+### Features
+
+前后台完全分离，页面只使用html与vue/vue-router.
+后台使用SpringMVC提供REST-ful接口，前台使用vue-resource与后台交互
+
+使用H2 database与Jetty，直接使用Maven命令`mvn jetty:run`启动即可演示，方便快捷
