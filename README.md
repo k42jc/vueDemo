@@ -1,10 +1,16 @@
 ### 运行演示步骤
 
-*前提：maven环境*
+*前提：jdk、maven环境*
 
 1. 在命令行进入项目目录(与pom.xml同级目录)
 3. 执行`mvn jetty:run`命令，使用jetty插件运行项目，项目加载过程中会加载好供演示的数据结构
 4. 待项目启动完成，打开浏览器，输入：`http://localhost:8080`
+
+*based:jdk and maven*
+
+1. cd vueDemo/
+2. exec commad 'mvn jetty:run'
+3. chrome/IE.url--http://localhost:8080
 
 down...
 
